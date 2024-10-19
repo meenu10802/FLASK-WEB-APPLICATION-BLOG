@@ -2,6 +2,10 @@ from flask import render_template, url_for, flash, redirect
 from flaskblog import app
 from flaskblog.forms import RegistrationForm, LoginForm
 from flaskblog.models import User, Post
+from flaskblog import app, db
+from flaskblog.models import Post, User
+from datetime import datetime
+
 posts = [
     {
         'author': 'Corey Schafer',
@@ -48,3 +52,13 @@ def login():
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
+
+@app.route('/create_post')
+def create_post():
+    user = User.query.first()  # Assuming at least one user exists
+    if user:
+        post = Post(title='Hello World', content='This is a test post.', author=user)
+        db.session.add(post)
+        db.session.commit()
+        return 'Post created!'
+    return 'No user found.'
