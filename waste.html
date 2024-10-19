@@ -1,0 +1,52 @@
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .media {
+            display: flex;
+            align-items: flex-start; /* Aligns items vertically */
+            margin-bottom: 1rem; /* Space between media items */
+            
+          }
+          
+          .media-img {
+            width: 64px; /* Set width of the image */
+            height: 64px; /* Set height of the image */
+            margin-right: 1rem; /* Space between image and text */
+           
+        }
+          
+          .media-body {
+            flex: 1; /* Allow text to fill the available space */
+          }
+          
+          .media-heading {
+            margin: 0 0 0.5rem 0; /* Space below the heading */
+          }
+          
+    </style>
+  </head>
+  <body>
+    <div class="media">
+        <img src="image.jpg" class="mr-3" alt="Image description" style="width: 64px; height: 64px;">
+        <div class="media-body">
+          <h5 class="mt-0">without bootstrap</h5>
+          This is an example of a media object. It allows you to combine images and text effectively.
+        </div>
+      </div>
+      <div class="media">
+        <img src="image.jpg" alt="Image description" class="media-img">
+        <div class="media-body">
+          <h4 class="media-heading">Boostrap</h4>
+          <p>This is an example of a media object. It allows you to combine images and text effectively.</p>
+        </div>
+      </div>
+  </body>
+  </html>
+ 
+  
